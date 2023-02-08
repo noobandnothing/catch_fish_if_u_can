@@ -85,6 +85,31 @@ void renderBitmapString(float x, float y, void* font, const char* string) {
 	}
 }
 
+//Menu Place Holder
+void menu() {
+
+	glColor3f(1.000, 1.000, 0.000);
+	renderBitmapString(-0.5, 0.7, (void*)GLUT_BITMAP_TIMES_ROMAN_24, "CATCH FISH IF U CAN");
+
+	glColor3f(0.000, 1.000, 0.000);
+	renderBitmapString(-0.5+0.1, 0.7 - 0.1, (void*)GLUT_BITMAP_HELVETICA_18, "Press SPACE to START");
+	renderBitmapString(-0.5 + 0.1*2, 0.7 - 0.1*2, (void*)GLUT_BITMAP_HELVETICA_18, "Press ESC to Exit");
+
+	glColor3f(1.000, 1.000, 1.000);
+	renderBitmapString(-0.5 + 0.14 , 0.7 - 0.1 * 3, (void*)GLUT_BITMAP_8_BY_13, "Press w to MOVE FORWARD");
+	renderBitmapString(-0.5 + 0.14 , 0.7 - 0.1 * 4,(void*)GLUT_BITMAP_8_BY_13, "Press s to MOVE BACKWARD");
+	renderBitmapString(-0.5 + 0.14 , 0.7 - 0.1 * 5,(void*)GLUT_BITMAP_8_BY_13, "Press a to turn Left");
+	renderBitmapString(-0.5 + 0.14, 0.7 - 0.1 * 6, (void*)GLUT_BITMAP_8_BY_13, "Press s to turn Right");
+	renderBitmapString(-0.5 + 0.14, 0.7 - 0.1 * 7, (void*)GLUT_BITMAP_8_BY_13, "Press r to turn Play Again");
+
+
+	glColor3f(0.000, 1.000, 1.000);
+	renderBitmapString(30 - 5, 50 - 40, (void*)GLUT_BITMAP_8_BY_13, "Project By: ");
+	renderBitmapString(30 - 5, 50 - 43, (void*)GLUT_BITMAP_8_BY_13, "CAT HEHE");
+
+}
+
+
 /* Generate random position */
 float RandomNumber(float x, float y) {
 	return((float)rand() / RAND_MAX * (y - x) + x);

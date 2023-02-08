@@ -30,6 +30,33 @@ int seconds = 30;
 
 /* Func */
 
+/* FOR countdown timer*/
+struct tm* getCurrentDateTime()
+{
+	time_t tt;
+	struct tm* st;
+
+	time(&tt);
+	st = localtime(&tt);
+	return st;
+}
+
+bool countdown() {
+
+	static int prev = getCurrentDateTime()->tm_sec;
+	if (seconds >= 1) {
+		if (prev != getCurrentDateTime()->tm_sec) {
+			prev = getCurrentDateTime()->tm_sec;
+			seconds--;
+		}
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
+
 /* Keyboard Controler */
 void keyboard(unsigned char key, int x, int y) {
 	if (!GameOver) {
